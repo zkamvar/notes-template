@@ -14,6 +14,17 @@ curl -L https://api.github.com/repos/zkamvar/notes-template/tarball \
 --exclude=README.md \
 --exclude=LICENSE
 ```
+```
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                               Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 66477    0 66477    0     0   120k      0 --:--:-- --:--:-- --:--:--  120k
+x .gitignore
+x Helvetica-Garamond.docx
+x Makefile
+x flow.png
+x pandoc.css
+```
 
 > The above command will not copy the README.md or LICENSE files to prevent them
 > over-writing your files.
