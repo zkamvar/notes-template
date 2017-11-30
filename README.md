@@ -6,10 +6,13 @@ To use this, you should have pandoc 1.19 or greater and Make installed
 
 ## Download
 
+To copy this into your current directory with markdown notes:
+
+```bash
+curl -L https://api.github.com/repos/zkamvar/notes-template/tarball \
+| tar --strip-components=1 -xzv --exclude=README.md
 ```
-git clone https://github.com/zkamvar/notes-template.git
-cd notes-template
-```
+
 ## Run
 
 To run this, first add any markdown notes you want and then run:
