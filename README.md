@@ -19,6 +19,10 @@ make clean
 make
 ```
 
+The workflow without any external input is:
+
+![Workflow in makefile](flow.png)
+
 ## Files
 
  - [Makefile](Makefile) will find all `*.md` files and render them to HTML, PDF, and DOCX
