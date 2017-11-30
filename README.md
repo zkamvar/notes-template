@@ -10,8 +10,13 @@ To copy this into your current directory with markdown notes:
 
 ```bash
 curl -L https://api.github.com/repos/zkamvar/notes-template/tarball \
-| tar --strip-components=1 -xzv --exclude=README.md
+| tar --strip-components=1 -xzv \
+--exclude=README.md \
+--exclude=LICENSE
 ```
+
+> The above command will not copy the README.md or LICENSE files to prevent them
+> over-writing your files.
 
 ## Run
 
