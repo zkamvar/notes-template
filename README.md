@@ -12,21 +12,21 @@ To copy this into your current directory with markdown notes:
 curl -L https://api.github.com/repos/zkamvar/notes-template/tarball \
 | tar --strip-components=1 -xzv \
 --exclude=README.md \
---exclude=LICENSE
+--exclude=LICENSE \
+--exclude=flow.png \
+--exclude=.gitignore
 ```
 ```
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
 100 66477    0 66477    0     0   120k      0 --:--:-- --:--:-- --:--:--  120k
-x .gitignore
 x Helvetica-Garamond.docx
 x Makefile
-x flow.png
 x pandoc.css
 ```
 
-> The above command will not copy the README.md or LICENSE files to prevent them
+> The above command will not copy the README.md, .gitignore, flow.png, or LICENSE files to prevent them
 > over-writing your files.
 
 ## Run
