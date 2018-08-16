@@ -3,7 +3,15 @@ HTML     := $(patsubst %.md,html/%.html,$(TARGETS))
 PDF      := $(patsubst %.md,pdf/%.pdf,$(TARGETS))
 DOCX     := $(patsubst %.md,docx/%.docx,$(TARGETS))
 TEMPLATE := Helvetica-Garamond.docx
-PANDARGS := --from markdown --smart --standalone
+ifeq ("$(shell pandoc --version | grep -c 'pandoc 2')","1")
+	PANDARGS := --from markdown+smart --standalone -F pandoc-citeproc
+	REFCMD := --reference-doc
+	ENGINE   := --pdf-engine=xelatex
+else
+	PANDARGS := --from markdown --smart --standalone -F pandoc-citeproc
+	REFCMD := --reference-docx
+	ENGINE   := --latex-engine=xelatex
+endif
 
 .PHONY: all
 all : $(HTML) $(PDF) $(DOCX)
@@ -22,14 +30,14 @@ html/%.html : %.md html/pandoc.css | html
 
 pdf/%.pdf : %.md pandoc.css | pdf
 	pandoc --to latex \
-       --latex-engine=xelatex \
+       $(ENGINE) \
        $(PANDARGS) \
        --css pandoc.css \
        --output $@ $<
 
 docx/%.docx : %.md $(TEMPLATE) | docx
 	pandoc --to docx \
-       --reference-docx=$(TEMPLATE) \
+       $(REFCMD)=$(TEMPLATE) \
        $(PANDARGS) \
        --output $@ $<
 
