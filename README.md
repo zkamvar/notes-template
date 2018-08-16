@@ -2,7 +2,7 @@
 
 A template for notes written in markdown and rendered to html, pdf, and docx with pandoc
 
-To use this, you should have pandoc 1.19 or greater and Make installed
+To use this, you should have pandoc 1.19 or greater, Make, and xelatex installed
 
 ## Download
 
